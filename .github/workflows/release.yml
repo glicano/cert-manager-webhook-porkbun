@@ -8,9 +8,11 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Necesario para subir el chart al repo
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3 # Actualizado de v2
         with:
           fetch-depth: 0
 
