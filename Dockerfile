@@ -11,9 +11,12 @@ RUN go mod download
 
 FROM build_deps AS build
 
+ARG TARGETOS
+ARG TARGETARCH
+
 COPY . .
 
-RUN CGO_ENABLED=0 go build -o webhook -ldflags '-w -extldflags "-static"' .
+RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o webhook -ldflags '-w -extldflags "-static"' .
 
 FROM scratch
 

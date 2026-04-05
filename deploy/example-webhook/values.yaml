@@ -13,8 +13,8 @@ certManager:
   serviceAccountName: cert-manager
 
 image:
-  repository: gcr.io/kjaleshire/cert-manager-webhook-porkbun
-  tag: v0.1.0
+  repository: ghcr.io/glicano/cert-manager-webhook-porkbun
+  tag: main
   pullPolicy: IfNotPresent
 
 nameOverride: ""
